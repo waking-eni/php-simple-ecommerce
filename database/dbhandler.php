@@ -43,6 +43,12 @@ class Database {
         }
     }
 
+    //count number of rows found matching a spesific query
+    public function numRows($sql) {
+        $numRows = $this->con->query($sql);
+        return $numRows->num_rows;
+    }
+
     //select from database without binding parameters
     public function getWithoutParameters($sql) {
         $stmt = $this->con->stmt_init();
