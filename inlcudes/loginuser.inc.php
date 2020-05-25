@@ -18,7 +18,7 @@ if(isset($_POST['login-submit'])) {
     $db = Database::getInstance();
 	
 	if(empty($mailuid) || empty($password))  {
-		header("Location: ../public/loginuser.php?error=emptyfields&mailuid=".$mailuid."&mail=".$email);
+		header("Location: ../public/loginUser.php?error=emptyfields&mailuid=".$mailuid."&mail=".$email);
 		exit();
 	}
 	else {
@@ -28,7 +28,7 @@ if(isset($_POST['login-submit'])) {
                 foreach($result as $key => $value) {
                     $pwdCheck = password_verify($password, $value['password']);
                     if($pwdCheck == false) {
-                        header("Location: ../public/loginuser.php?error=wrongpwd");
+                        header("Location: ../public/loginUser.php?error=wrongpwd");
                         exit();
                     }
                     else if($pwdCheck == true) {
@@ -40,13 +40,13 @@ if(isset($_POST['login-submit'])) {
                     }
                 }
 			} else {
-				header("Location: ../public/loginuser.php?error=nouser");
+				header("Location: ../public/loginUser.php?error=nouser");
 				exit();
 			}
 		}
 	}
 
 else {
-	header("Location: ../public/loginuser.php");
+	header("Location: ../public/loginUser.php");
 	exit();
 }
