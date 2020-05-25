@@ -49,4 +49,12 @@ class Product {
         exit();
     }
 
+    public function getNumberOfProducts() {
+        $db = $this->connect();
+        $sql = "SELECT id FROM product ;";
+        $result = $db->numRows($sql);
+        return $result;
+        exit();
+    }
+
 }
