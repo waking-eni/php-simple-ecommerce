@@ -24,7 +24,7 @@ if(isset($_POST['login-submit'])) {
     $db = Database::getInstance();
 	
 	if(empty($mailuid) || empty($password))  {
-		header("Location: ../public/loginadministrator.php?error=emptyfields&mailuid=".$mailuid."&mail=".$email);
+		header("Location: ../public/loginAdmin.php?error=emptyfields&mailuid=".$mailuid."&mail=".$email);
 		exit();
 	}
 	else {
@@ -35,7 +35,7 @@ if(isset($_POST['login-submit'])) {
                     /*I used SHA-256 for password encryption in MySQL for administrators*/ 
                     $pwdCheck = checkPassword($password, $value['password']);
                     if($pwdCheck == false) {
-                        header("Location: ../public/loginadministrator.php?error=wrongpwd");
+                        header("Location: ../public/loginAdmin.php?error=wrongpwd");
                         exit();
                     } else if($pwdCheck == true) {
                         $_SESSION['administratorId'] = $value['id'];
@@ -46,12 +46,12 @@ if(isset($_POST['login-submit'])) {
                     }
             }
         } else {
-            header("Location: ../public/loginuser.php?error=nouser");
+            header("Location: ../public/loginAdmin.php?error=nouser");
             exit();
         }
 	}
 	
 } else {
-	header("Location: ../public/loginadministrator.php");
+	header("Location: ../public/loginAdmin.php");
 	exit();
 }
