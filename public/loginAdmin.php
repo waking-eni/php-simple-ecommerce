@@ -39,7 +39,7 @@
 
             <h1 class="text-center mt-5">Log In Administrator</h1>
             <!--action points to the script for administrator log in-->
-            <form class="center-div" name="loginForm" action="../includes/loginadministrator.inc.php" method="post" onsubmit="return(validate());">
+            <form class="center-div" name="loginForm" action="../includes/loginadmin.inc.php" method="post" onsubmit="return(validate());">
                 <input type="text" name="mailuid" placeholder="E-mail/Username">
                 <p id="adminMailName"></p>
                 <input class="d-block my-3" type="password" name="pwd" placeholder="Password">
