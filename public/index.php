@@ -44,7 +44,7 @@
 
     <!--main-->
     <main class="col-9 main">
-        <div class="main-card">
+        <div class="main-card row">
 
             <?php
                 try {
@@ -77,13 +77,15 @@
                 if($products && !empty($products)) {
 
                     foreach($products as $key => $value) {
-                        echo '<div class="card">';
-                            echo '<img class="card-img-top" src="../images/products-small/'.$value['image'].
-                            '" alt="Product image">';
-                            echo '<div class="card-body">';
-                                echo '<h2 class="card-header"><a class="green-link" href="seeProduct.php?id='.$value['id'].'&name='.
-                                stripslashes($value['name']).'">'.stripslashes($value['name']).'</a></h2>';
-                                echo '<p class="card-text mt-1">'.stripslashes($value['price']).'</p>';
+                        echo '<div class="col-sm-6">';
+                            echo '<div class="card">';
+                                echo '<img class="card-img-top" src="../images/products-small/'.$value['image'].
+                                '" alt="Product image">';
+                                echo '<div class="card-body">';
+                                    echo '<h2 class="card-header"><a class="green-link" href="seeProduct.php?id='.$value['id'].'&name='.
+                                    stripslashes($value['name']).'">'.stripslashes($value['name']).'</a></h2>';
+                                    echo '<p class="card-text mt-1">'.stripslashes($value['price']).'</p>';
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                     }
