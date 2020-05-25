@@ -17,7 +17,7 @@ class Product {
     public function fetchProducts($offset, $total_records_per_page) {
         $db = $this->connect();
         $sql = "SELECT id, name, price, image FROM product 
-                ORDER BY date_added DESC LIMIT $offset, $total_records_per_page ;";
+                ORDER BY name DESC LIMIT $offset, $total_records_per_page ;";
         $result = $db->getWithoutParameters($sql);
         return $result;
         exit();
