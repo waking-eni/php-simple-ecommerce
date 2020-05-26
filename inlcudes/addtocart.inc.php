@@ -21,7 +21,7 @@ if(isset($_POST['addtocart'])) {
     $total = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['total']);
     $productId = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['productId']);
 
-    if(empty($quantity) || empty($total) || empty($productId)) {
+    if($quantity===null || $total===null || $productId===null) {
         header("Location: ../public/index.php?error=noproduct");
         exit();
     } else {
