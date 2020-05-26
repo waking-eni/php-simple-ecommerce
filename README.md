@@ -7,6 +7,7 @@ OOP PHP, HTML, CSS, JavaScript, Bootstrap, MySQL, WampServer
 * Listing all categories in the sidebar, and being able to display all products that belong to chosen category
 * Displaying the chosen product with all its information
 * Showing total price depending on the quantity off the chosen product
+* Adding products to the cart using sessions
 * Separate log in for users and administrators
 * Sign up
 * Log out
