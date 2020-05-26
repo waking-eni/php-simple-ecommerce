@@ -77,7 +77,8 @@
                             echo '<div class="card">';
                                 echo '<div class="card-body">';
                                     echo '<h2 class="card-header">'.stripslashes($value['name']).'</h2>';
-                                    echo '<form id="productform" method="post" action="../includes/addtocart.inc.php" oninput="total.value=parseInt(quantity.value)*'.stripslashes($value['price']).'">';
+                                    echo '<form id="productform" method="post" action="../includes/addtocart.inc.php" 
+                                            oninput="totalview.value=parseInt(quantity.value)*'.stripslashes($value['price']).'" onchange="return(total());">';
                                         echo '<div class="form-row">';
                                             echo '<div class="col">';
                                                 //category
@@ -93,7 +94,7 @@
                                                     echo '<label for:"quantity">Quantity: </label>';
                                                     echo '<select id="quantity" name="quantity" size="1">';
                                                         for($i=1; $i<stripslashes($value['quantity']+1); $i++) {
-                                                            echo '<option value="'.$i.'">'.$i.'</option>';
+                                                            echo '<option>'.$i.'</option>';
                                                         }
                                                     echo '</select>';
                                                 echo '</div';
@@ -103,12 +104,13 @@
                                                 echo '</div';
                                                 //total
                                                 echo '<div class="md-form">';
-                                                    echo '<label for:"total">Total: </label>';
-                                                        echo '<output name="total" for="quantity price" form="productform">'.stripslashes($value['price']).'</output>';
+                                                    echo '<label for:"totalview">Total: </label>';
+                                                        echo '<output id="totalview" name="totalview" for="quantity price" form="productform">'.stripslashes($value['price']).'</output>';
                                                 echo '</div';
                                                 //submit
                                                 echo '<div class="md-form">';
                                                     echo '<button class="d-block my-3 btn btn-dark float-right" type="submit" name="addtocart">Add to Cart</button>';
+                                                    echo '<input type="hidden" id="total" name="total">';
                                                 echo '</div';
                                                 //hidden id input field
                                                 echo '<input type="hidden" id="productId" name="productId" value="'.stripslashes($value['id']).'">';
@@ -127,6 +129,14 @@
             </div>
         </main>
         <!--end of main-->
+
+<script>
+    //put output value in the hidden input field to send it to the script via post method (on submit)
+    function total() {
+        document.getElementById('total').value = document.getElementById('totalview').value;
+    }
+
+</script>
 
 </body>
 
