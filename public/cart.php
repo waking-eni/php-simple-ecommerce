@@ -50,24 +50,28 @@ if (session_status() == PHP_SESSION_NONE) {
                     <?php
 
                     if(isset($_SESSION['userUsername'])) {
-                        $max = sizeof($_SESSION['cart']);
-                        $array = $_SESSION['cart'];
-                        for($i=0; $i<$max; $i++) {
-                            echo '<tr>';
-                                echo '<td>';
-                                    echo $array[$i][0];
-                                echo '</td>';
-                                echo '<td>';
-                                    echo $array[$i][1];
-                                echo '</td>';
-                                echo '<td>';
-                                    echo $array[$i][2];
-                                echo '</td>';
-                            echo '</tr>';
-                        }
-                    } else {
-                        echo '<p>Your cart is empty.</p>';
-                    }
+                        if(isset($_SESSION['cart'])) {
+                            $max = sizeof($_SESSION['cart']);
+                            $array = $_SESSION['cart'];
+                            if(array_key_exists(0, $array[0])) {
+                                for($i=0; $i<$max; $i++) {
+                                    echo '<tr>';
+                                        echo '<td>';
+                                            echo $array[$i][0];
+                                        echo '</td>';
+                                        echo '<td>';
+                                            echo $array[$i][1];
+                                        echo '</td>';
+                                        echo '<td>';
+                                            echo $array[$i][2];
+                                        echo '</td>';
+                                    echo '</tr>';
+                                }
+                            } else {
+                                echo '<p>Your cart is empty.</p>';
+                            }
+                        } 
+                    } 
 
                     ?>
 
