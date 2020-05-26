@@ -26,7 +26,7 @@ if(isset($_POST['addtocart'])) {
         exit();
     } else {
         $_SESSION['cart'] = array();
-        $a = array("productId" => $productId, "quantity" => $quantity, "total" => $total);
+        $a = array($productId, $quantity, $total);
         array_push($_SESSION['cart'], $a);
 
         header("Location: ../public/cart.php");
