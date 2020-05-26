@@ -1,4 +1,8 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
    include_once __DIR__.'/../database/product.php';
 ?>
 
@@ -63,8 +67,8 @@
                             echo '<img class="card-img-top" src="../images/products-small/'.$value['image'].
                                 '" alt="Product image">';
                             echo '<div class="card-body">';
-                                echo '<h2 class="card-text"><a class="red-font" target="_blank" href="../images/products-original/'.$value['image_large'].
-                                    '">Full size image</a></h2>';
+                                echo '<h2 class="card-text"><a class="text-muted h6" target="_blank" href="../images/products-original/'.$value['image_large'].
+                                    '">Full sized image</a></h2>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
@@ -73,7 +77,7 @@
                             echo '<div class="card">';
                                 echo '<div class="card-body">';
                                     echo '<h2 class="card-header">'.stripslashes($value['name']).'</h2>';
-                                    echo '<form id="productform" method="post" action="#" oninput="total.value=parseInt(quantity.value)*'.stripslashes($value['price']).'">';
+                                    echo '<form id="productform" method="post" action="../includes/addtocart.inc.php" oninput="total.value=parseInt(quantity.value)*'.stripslashes($value['price']).'">';
                                         echo '<div class="form-row">';
                                             echo '<div class="col">';
                                                 //category
@@ -106,6 +110,8 @@
                                                 echo '<div class="md-form">';
                                                     echo '<button class="d-block my-3 btn btn-dark float-right" type="submit" name="addtocart">Add to Cart</button>';
                                                 echo '</div';
+                                                //hidden id input field
+                                                echo '<input type="hidden" id="productId" name="productId" value="'.stripslashes($value['id']).'">';
                                             echo '</div>';
                                         echo '</div>';
                                     echo '</form>';
