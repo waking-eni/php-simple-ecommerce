@@ -25,7 +25,7 @@ class Product {
 
     public function getProduct($id) {
         $db = $this->connect();
-        $sql = "SELECT name, price, quantity, image, image_large FROM product
+        $sql = "SELECT id, name, price, quantity, image, image_large, category FROM product
                 WHERE id = ? ;";
         $result = $db->getWithParameter($sql, $id);
         return $result;
