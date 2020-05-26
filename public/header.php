@@ -42,7 +42,7 @@
 
             <ul class="navbar-nav pl-0 ml-0 float-left">
                 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="cart.php">
                     <img src="../images/Ecommerce_RTE-03-512.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 </a>
 
