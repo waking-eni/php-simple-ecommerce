@@ -5,6 +5,8 @@ OOP PHP, HTML, CSS, JavaScript, Bootstrap, MySQL, WampServer
 #### Functionalities I've implemented so far:
 * Displaying a list of products (with desired information and images), ordered by name descending, on home page
 * Listing all categories in the sidebar, and being able to display all products that belong to chosen category
+* Displaying the chosen product with all its information
+* Showing total price depending on the quantity off the chosen product
 * Separate log in for users and administrators
 * Sign up
 * Log out
