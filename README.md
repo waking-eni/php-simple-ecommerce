@@ -22,5 +22,3 @@ OOP PHP, HTML, CSS, JavaScript, Bootstrap, MySQL, WampServer
 * If a person is logged in, show log out option
 * Pagination system
 * Administrators can add and remove products
-***
-Currently working on cart functionality.
