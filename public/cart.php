@@ -50,8 +50,8 @@ if (session_status() == PHP_SESSION_NONE) {
                     <table class="table" id="productTable">
                         <thead>
                             <tr>
-                                <th scope="col">NAME</th>
                                 <th scope="col">ID</th>
+                                <th scope="col">NAME</th>
                                 <th scope="col">QUANTITY</th>
                                 <th scope="col">TOTAL</th>
                             </tr>
@@ -65,7 +65,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             if(isset($_SESSION['cart'])) {
                                 $max = sizeof($_SESSION['cart']);
                                 $array = $_SESSION['cart'];
-                                if(array_key_exists(0, $array[0])) {
+                                if(array_key_exists(0, $array)) {
                                     for($i=0; $i<$max; $i++) {
                                         echo '<tr>';
                                             echo '<td>';
