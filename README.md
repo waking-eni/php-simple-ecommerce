@@ -21,5 +21,6 @@ OOP PHP, HTML, CSS, JavaScript, Bootstrap, MySQL, WampServer
 * Showing sign in options only when there is no person logged in
 * If a person is logged in, show log out option
 * Pagination system
+* Administrators can add and remove products
 ***
 Currently working on cart functionality.
