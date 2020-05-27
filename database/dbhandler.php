@@ -1,7 +1,9 @@
 <?php
+
 /*
 Database handler
 */
+
 define('host', 'localhost');
 define('user', 'root');
 define('pass', '');
@@ -122,6 +124,11 @@ class Database {
         } else {
             return null;
         }
+    }
+
+    public function runQuery($sql) {
+    	$this->con->query($sql);
+    	echo mysqli_error($this->con);
     }
 
 }
