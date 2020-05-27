@@ -47,33 +47,49 @@ if (session_status() == PHP_SESSION_NONE) {
             <main class="col-9 main">
                 <div class="main-card row">
 
-                    <?php
+                    <table class="table" id="articleTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">NAME</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">QUANTITY</th>
+                                <th scope="col">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    if(isset($_SESSION['userUsername'])) {
-                        if(isset($_SESSION['cart'])) {
-                            $max = sizeof($_SESSION['cart']);
-                            $array = $_SESSION['cart'];
-                            if(array_key_exists(0, $array[0])) {
-                                for($i=0; $i<$max; $i++) {
-                                    echo '<tr>';
-                                        echo '<td>';
-                                            echo $array[$i][0];
-                                        echo '</td>';
-                                        echo '<td>';
-                                            echo $array[$i][1];
-                                        echo '</td>';
-                                        echo '<td>';
-                                            echo $array[$i][2];
-                                        echo '</td>';
-                                    echo '</tr>';
+                        <?php
+
+                        if(isset($_SESSION['userUsername'])) {
+                            if(isset($_SESSION['cart'])) {
+                                $max = sizeof($_SESSION['cart']);
+                                $array = $_SESSION['cart'];
+                                if(array_key_exists(0, $array[0])) {
+                                    for($i=0; $i<$max; $i++) {
+                                        echo '<tr>';
+                                            echo '<td>';
+                                                echo $array[$i][0];
+                                            echo '</td>';
+                                            echo '<td>';
+                                                echo $array[$i][1];
+                                            echo '</td>';
+                                            echo '<td>';
+                                                echo $array[$i][2];
+                                            echo '</td>';
+                                            echo '<td>';
+                                                echo $array[$i][3];
+                                            echo '</td>';
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo '<p>Your cart is empty.</p>';
                                 }
-                            } else {
-                                echo '<p>Your cart is empty.</p>';
-                            }
+                            } 
                         } 
-                    } 
 
-                    ?>
+                        ?>
+                        </tbody>
+                    </table>
 
                 </div>
             </main>
