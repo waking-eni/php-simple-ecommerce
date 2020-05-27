@@ -9,6 +9,7 @@ OOP PHP, HTML, CSS, JavaScript, Bootstrap, MySQL, WampServer
 * Showing total price depending on the quantity off the chosen product
 * Adding products to the cart using sessions
 * Displaying all products in the cart with total price
+* Removing products from the cart
 * Separate log in for users and administrators
 * Sign up
 * Log out
