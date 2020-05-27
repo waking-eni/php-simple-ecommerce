@@ -16,7 +16,7 @@
                                 echo '<a class="dropdown-item" href="../includes/logout.inc.php">Log out</a>';
                             } else {
                                 echo '<a class="dropdown-item" href="loginuser.php">Log in as User</a>';
-                                echo '<a class="dropdown-item" href="loginadministrator.php">Log in as Administrator</a>';
+                                echo '<a class="dropdown-item" href="loginAdmin.php">Log in as Administrator</a>';
                                 echo '<div class="dropdown-divider"></div>';
                                 echo '<a class="dropdown-item" href="signup.php">Sign Up</a>';
                             }
@@ -58,7 +58,7 @@
                             echo '<li class="nav-item active white-font">'.$userUsername.'</li>';
                         } else if(isset($_SESSION['administratorUsername'])) {
                             $administratorUsername = $_SESSION['administratorUsername'];
-                            echo '<li class="nav-item active btn btn-success"><a href="adminManageArticles.php">Manage</a></li>';
+                            echo '<li class="nav-item active btn btn-danger"><a href="adminManageProducts.php" class="white-font">Manage</a></li>';
                             echo '<li class="nav-item active white-font my-auto mx-1">'.$administratorUsername.'</li>';
                         } else {
                             echo '<li class="nav-item active white-font"></li>';
