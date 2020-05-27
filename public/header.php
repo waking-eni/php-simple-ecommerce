@@ -72,6 +72,6 @@
 
     <div class="jumbotron jumbotron-fluid jumbotron-header mb-0">
         <div class="container">
-            <h2 class="display-4 text-center">Nowena Shop</h2>
+            <h2 class="display-4 text-center"><a href="index.php" class="red-font">Nowena Shop</a></h2>
         </div>
     </div>
