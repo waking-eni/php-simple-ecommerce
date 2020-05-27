@@ -120,6 +120,10 @@
                                 echo '</div>';
                             echo '</div>';
                         echo '</div>';
+
+                        $_SESSION['prId'] = stripslashes($value['id']);
+                        $_SESSION['prPrice'] = stripslashes($value['price']);
+                        $_SESSION['prName'] = stripslashes($value['name']);
                 }
 
             }
