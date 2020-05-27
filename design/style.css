@@ -37,3 +37,11 @@ html, body
 {
     color: darkred;
 }
+a:hover
+{
+    color: darksalmon;
+}
+.nav-link:hover
+{
+    color: darksalmon;
+}
