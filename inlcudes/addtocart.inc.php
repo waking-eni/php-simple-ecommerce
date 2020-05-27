@@ -18,15 +18,18 @@ if(isset($_POST['addtocart'])) {
     }
 
     $quantity = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['quantity']);
-    $total = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['total']);
-    $productId = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['productId']);
+    //$total = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['total']);
+    //$productId = str_replace(array(':', '-', '/', '*', '<', '>'), '', $_POST['productId']);
+    $total = $_SESSION['prPrice'] * $quantity;
+    $productId = $_SESSION['prId'];
+    $prName = $_SESSION['prName'];
 
-    if($quantity===null || $total===null || $productId===null) {
+    if($quantity===null || $total===null || $productId===null || $prName===null) {
         header("Location: ../public/index.php?error=noproduct");
         exit();
     } else {
         $_SESSION['cart'] = array();
-        $a = array($productId, $quantity, $total);
+        $a = array($prName, $productId, $quantity, $total);
         array_push($_SESSION['cart'], $a);
 
         header("Location: ../public/cart.php");
