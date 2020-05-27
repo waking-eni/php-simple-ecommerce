@@ -96,7 +96,7 @@
                         <input type="file" name="chooseimg" id="chooseimg" class="form-control">
                     </div>
                     <div class="form-group">
-                        <button class="d-block my-3 btn btn-dark float-right" type="submit" name="add-article">Add</button>
+                        <button class="d-block my-3 btn btn-dark float-right" type="submit" name="add-product">Add</button>
                     </div>
                 </form>
 
