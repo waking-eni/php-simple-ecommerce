@@ -74,7 +74,7 @@
                                 if($categories && !empty($categories)) {
                                     foreach($categories as $key => $category) {
                                         echo '<option>';
-                                        echo $category["category"];
+                                        echo $category["name"];
                                         echo '</option>';
                                     }
                                 }
