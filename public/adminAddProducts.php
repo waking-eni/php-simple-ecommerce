@@ -93,7 +93,7 @@
                     </div>
                     <div class="form-group">
                         <label for="chooseimg">Choose a full sized picture</label>    
-                        <input type="file" name="chooseimg" id="chooseimg" class="form-control">
+                        <input type="file" name="chooseimgl" id="chooseimgl" class="form-control">
                     </div>
                     <div class="form-group">
                         <button class="d-block my-3 btn btn-dark float-right" type="submit" name="add-product">Add</button>
